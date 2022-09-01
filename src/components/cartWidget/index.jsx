@@ -4,9 +4,12 @@ import {HiShoppingCart} from 'react-icons/hi';
 export const CartWidget = () => {
 return (
     <div style={{
-        width: '40px'
+        width: '25px',
+        display: 'flex',
+        right: '20px',
+        top: '5px',
     }}>
-    <HiShoppingCart color='red'/>
+    <HiShoppingCart color='white' size={50}/>
     </div>
 )
 }
