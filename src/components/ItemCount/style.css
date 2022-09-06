@@ -1,0 +1,13 @@
+.contador{
+    text-align: center;
+    display: grid;
+}
+.cuenta{
+    background-color: black;
+    color: red;
+    font-size: larger;
+}
+.carro{
+    font-size: 1.2rem;
+    color: green;
+}
