@@ -1,0 +1,14 @@
+.detallegrid{
+    display: grid;
+    grid-template-areas:  "imgdetail detalle";
+    grid-template-columns: 50% 50%;
+}
+.imgdetail{
+    grid-area: "imgdetail";
+    border: 1px;
+}
+.productodetallado{
+    grid-area: "detalle";
+    padding: 4rem;
+    text-align: center;
+}

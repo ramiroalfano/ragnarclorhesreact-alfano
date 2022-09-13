@@ -1,13 +1,20 @@
 .contador{
     text-align: center;
-    display: grid;
+    display: flex;
 }
 .cuenta{
+    width: 50px;
+    height: 50px;
     background-color: black;
     color: red;
     font-size: larger;
 }
 .carro{
-    font-size: 1.2rem;
+    width: 100px;
+    height: 50px;
+    font-size: 1rem;
     color: green;
+}
+h2{
+    width: 40;
 }
