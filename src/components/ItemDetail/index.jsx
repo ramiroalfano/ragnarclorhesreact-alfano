@@ -10,7 +10,7 @@ return (
             <img className='imgdetail' src={product.image} width={300} alt="product-detail"/>
             <div className='productodetallado'>
                 <p>{product.description}</p>
-                <h2>{product.price}</h2><h2>{product.stock}</h2>
+                <h2>{product.price}</h2>
                 <ItemCount/>
                 </div>
         </div>
