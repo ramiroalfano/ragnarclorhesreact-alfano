@@ -14,11 +14,13 @@ const ItemCount = ({stock, initial, onAdd}) => {
     }
 
     const handleDecrement = () => {
-    }
-
+        if(count < stock) {
+            setCount(count-1);
+}
+}
     const addCart = () => {
         onAdd(count);
-        setCount(initial);
+        setCount(initial=1);
     }
 
     useEffect(()=> {

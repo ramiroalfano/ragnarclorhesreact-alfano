@@ -9,12 +9,14 @@ import {
 } from "react-router-dom";
 import NotFound from './components/NotFound';
 import Cart from './container/CartContainer';
+import ShopProvider from './context/ShopProvider';
 
 function App() {
 
   // const categorias = ["Electronics", "Audio & Video", "Clothing"]
 
   return (
+    <ShopProvider>
     <BrowserRouter>
       <NavBar />      
       <Routes>
@@ -25,6 +27,7 @@ function App() {
         <Route path="*" element={<NotFound/>}/>
       </Routes>
     </BrowserRouter>
+    </ShopProvider>
   );
 }
 export default App;
