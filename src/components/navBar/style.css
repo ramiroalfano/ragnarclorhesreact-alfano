@@ -1,23 +1,28 @@
 ul {
+    width: 100%;
+    size: 50px;
     list-style-type: none;
     margin: 0;
     padding: 0;
     border: 1px #1e1d1d;
-    background-color: #000000;
 }
 
 li {
     float: left;
-}
-
-li a {
     display: block;
-    color: rgb(255, 255, 255);
+    color: rgb(208, 196, 196);
     text-align: center;
     padding: 15px 18px;
     text-decoration: none;
 }
 
 li a:hover{
-    background-color: rgb(39, 38, 38);
+    background-color: rgb(135, 135, 135);
+}
+.CartWidget{
+    text-align: right;
+}
+.navbar-brand{
+    color: brown;
+    font-family: Luminari, fantasy;
 }

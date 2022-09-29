@@ -1,28 +1,34 @@
 .card-container{
     display: flex;
     flex-direction: column;
+    margin-left: 1rem;
+    margin-top: 4rem;
     align-items: center;
-    background-color: rgb(5, 4, 4);
-    gap: 30px;
-    padding: 20px;
-    width: 200px;
-    height: 400px;
+    background-color: rgb(54, 53, 56);
+    gap: 15px;
+    padding: 40px;
+    width: 220px;
+    border-radius: 20px;
+    height: 460px;
     box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.79);
     transition: 0.3s ease;
     cursor: pointer;
 }
     .card-title{
         color: white;
-        font-size: 15px;
+        font-size: 10px;
         line-height: 20px;
         letter-spacing: 0.04em;
     }
 
     .card-img{
-        max-height: 350px;
+        max-height: 200px;
     }
 
 .card-container:hover{
     transform: scale(1.06);
     transition: 0.3s ease;
+}
+.card-price{
+    color: white;
 }

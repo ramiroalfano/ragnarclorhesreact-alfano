@@ -6,25 +6,30 @@ import {Link} from 'react-router-dom';
 const NavBar = () => {
 
     return (
-        <ul>
-            <li>
-                <Link to="/">Home</Link>
-            </li>
-            <li>
-                <Link to="/category/men's clothing">Indumentaria Masculina</Link>
-            </li>
-            <li>
-                <Link to="/category/women's clothing">Indumentaria Femenina</Link>
-            </li>
-            <li>
-                <Link to="/category/electronics">Computacion</Link>
-            </li>
-            <li>
-                <Link to="/category/jewelery">Joyeria</Link>
-            </li>
-            <CartWidget/>
-        </ul>
-    );
+    <nav class="navbar navbar-expand-sm bg-dark ">
+        <div class="container-fluid">
+            <div class="navbar-brand">RagnarClothes</div>
+            <ul>
+                <li class="nav-item">
+                    <Link to="/">Home</Link>
+                </li>
+                <li class="nav-item">
+                    <Link class="nav-link" to="/category/men's clothing">Indumentaria Masculina</Link>
+                </li>
+                <li class="nav-item">
+                    <Link class="nav-link" to="/category/women's clothing">Indumentaria Femenina</Link>
+                </li>
+                <li class="nav-item">
+                    <Link class="nav-link" to="/category/electronics">Computacion</Link>
+                </li>
+                <li class="nav-item">
+                    <Link class="nav-link" to="/category/jewelery">Joyeria</Link>
+                </li>
+                <CartWidget/>
+            </ul>
+        </div>
+    </nav>
+);
 };
 
 export default NavBar;
