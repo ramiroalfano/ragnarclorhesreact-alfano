@@ -9,7 +9,7 @@ return (
             return <Item key={product.id} product={product}/>
         })
         :
-        <h2>Cargando...</h2>
+        <h2 className='carga'>Cargando...</h2>
     }
     </div>
 )

@@ -5,3 +5,7 @@
     minmax(200px, 1fr));
     gap: 20px;
 }
+.carga{
+    text-align: center;
+    margin: 8rem;
+}

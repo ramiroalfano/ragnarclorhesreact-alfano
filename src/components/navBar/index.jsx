@@ -8,10 +8,10 @@ const NavBar = () => {
     return (
     <nav class="navbar navbar-expand-sm bg-dark ">
         <div class="container-fluid">
-            <div class="navbar-brand">RagnarClothes</div>
+            <div class="navbar-brand" >RagnarClothes</div>
             <ul>
                 <li class="nav-item">
-                    <Link to="/">Home</Link>
+                    <Link class="nav-link" to="/">Home</Link>
                 </li>
                 <li class="nav-item">
                     <Link class="nav-link" to="/category/men's clothing">Indumentaria Masculina</Link>
@@ -25,7 +25,9 @@ const NavBar = () => {
                 <li class="nav-item">
                     <Link class="nav-link" to="/category/jewelery">Joyeria</Link>
                 </li>
+                <li>
                 <CartWidget/>
+                </li>
             </ul>
         </div>
     </nav>

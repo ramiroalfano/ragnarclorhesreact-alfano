@@ -16,8 +16,18 @@
     text-align: center;
 }
 .botonfinalizacion{
-    width: 15rem;
+    width: 20rem;
+    padding: 1rem;
     background-color: green;
-    border: 6px double black;
+    border: 6px black;
+    border-radius: 25px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+button:hover{
+    background-color: rgb(2, 52, 12);
+    color: white;
+}
+.tittleDetail{
+    text-align: center;
+    margin-bottom: 3rem;
 }

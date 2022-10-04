@@ -4,7 +4,7 @@
     margin-left: 1rem;
     margin-top: 4rem;
     align-items: center;
-    background-color: rgb(54, 53, 56);
+    background-color: rgb(93, 92, 92);
     gap: 15px;
     padding: 40px;
     width: 220px;
@@ -16,13 +16,15 @@
 }
     .card-title{
         color: white;
-        font-size: 10px;
+        font-size: 12px;
         line-height: 20px;
         letter-spacing: 0.04em;
     }
 
     .card-img{
-        max-height: 200px;
+        height: 200px;
+        width: 180px;
+        border-radius: 4px;
     }
 
 .card-container:hover{
