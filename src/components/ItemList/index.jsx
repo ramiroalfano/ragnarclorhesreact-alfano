@@ -4,7 +4,6 @@ import './style.css';
 
 const ItemList = ({products}) => {
 
-console.log(products);
 return (
     <div className='item-container'>
         {products.map(product => {

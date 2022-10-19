@@ -6,13 +6,11 @@ import { db } from "../../firebase/config";
 import { collection, query, where, getDocs } from "firebase/firestore";
 
 const ItemListContainer = () => {
-    console.log(db);
 
     const [productos, setProductos] = useState([]);
 
     const { categoryId } = useParams();
 
-    console.log(categoryId);
 
     useEffect(() => {
         (async () => {
@@ -30,7 +28,6 @@ const ItemListContainer = () => {
                 querySnapshot.forEach((doc) => {
                     productosFirebase.push({ id: doc.id, ...doc.data() });
                 });
-                console.log(productosFirebase);
                 setProductos(productosFirebase);
             } catch (error) {
                 console.log(error);

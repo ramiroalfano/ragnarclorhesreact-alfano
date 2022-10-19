@@ -30,16 +30,21 @@ const AuthContainer = ({ handleClose, login, signUp }) => {
         const auth = getAuth();
         onAuthStateChanged(auth, (user) => {
             if (user) {
+                // User is signed in, see docs for a list of available properties
+                // https://firebase.google.com/docs/reference/js/firebase.User
                 console.log(user);
+                // ...
             } else {
                 console.log("No hay usuario loggeado");
+                // User is signed out
+                // ...
             }
         });
     }, []);
 
     const handleLogin = () => {
         if (login) {
-
+            //Login logic
             if (email === "") {
                 setErrorEmail("Required field");
                 return;
@@ -51,8 +56,10 @@ const AuthContainer = ({ handleClose, login, signUp }) => {
 
             signInWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
+                    // Signed in
                     console.log("Login");
                     console.log(userCredential);
+                    // ...
                 })
                 .catch((error) => {
                     console.log(error);
@@ -60,6 +67,7 @@ const AuthContainer = ({ handleClose, login, signUp }) => {
             setErrorEmail("");
             setErrorPassword("");
         } else {
+            //Signup logic
             if (email === "") {
                 setErrorEmail("Required field");
                 return;
@@ -78,12 +86,15 @@ const AuthContainer = ({ handleClose, login, signUp }) => {
             setLoading(true);
             createUserWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
+                    // Signed in
                     console.log(userCredential.user);
+                    // ...
                 })
                 .catch((error) => {
                     const errorCode = error.code;
                     const errorMessage = error.message;
                     console.log(errorCode, errorMessage);
+                    // ..
                 })
                 .finally(() => {
                     setLoading(false);

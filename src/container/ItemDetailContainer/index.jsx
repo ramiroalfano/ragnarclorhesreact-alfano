@@ -9,9 +9,6 @@ const ItemDetailContainer = () => {
 
     const {productId} = useParams();
 
-    console.log(productId);
-    
-
     useEffect(()=> {
 
         const getProducts = async () => {
@@ -21,7 +18,6 @@ const ItemDetailContainer = () => {
                 const docSnap = await getDoc(docRef);
 
                 if (docSnap.exists()) {
-                    console.log("Document data:", docSnap.data());
                     setProductDetail({id: docSnap.id, ...docSnap.data()});
                 } else {
                     console.log("No such document!");

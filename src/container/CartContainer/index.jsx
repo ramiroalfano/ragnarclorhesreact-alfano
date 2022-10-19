@@ -11,7 +11,7 @@ import { db } from "../../firebase/config";
 const Cart = () => {
     const { cart, removeItem, clearCart, total } = useContext(Shop);
 
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     const renderImage = (image) => {
         return (
@@ -46,7 +46,6 @@ const Cart = () => {
             cart,
             importeTotal
         );
-        console.log(orden);
 
         const docRef = await addDoc(collection(db, "orders"), orden);
 

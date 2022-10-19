@@ -23,8 +23,8 @@
     border-radius: 25px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-button:hover{
-    background-color: rgb(2, 52, 12);
+.botonfinalizacion:hover{
+    background-color: rgb(2, 110, 24);
     color: white;
 }
 .tittleDetail{

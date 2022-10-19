@@ -16,7 +16,7 @@ import algoritmoGuardadoAutomático from './services/guardarProductos';*/
 function App() {
 
 /*useEffect(()=> {
-    console.log("Se debería ejecutar una sola vez");
+    console.log;
     algoritmoGuardadoAutomático();
   }, [])*/
 

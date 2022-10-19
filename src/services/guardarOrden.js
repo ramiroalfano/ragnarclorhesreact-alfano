@@ -2,7 +2,7 @@ import { addDoc, collection, doc, getDoc, writeBatch } from "firebase/firestore"
 import { db } from "../firebase/config"
 
 const guardarOrden = (cart, orden) => {
-    console.log("Guardar orden");
+
     const batch = writeBatch(db)
 
     const outOfStock = []
