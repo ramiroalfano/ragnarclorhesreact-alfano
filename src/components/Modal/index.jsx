@@ -1,6 +1,9 @@
 import React from 'react'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import './style.css';
+import Toastify from 'toastify-js';
+import "toastify-js/src/toastify.css"
 
 const Form = ({  datoNombre, datoEmail, datoCel, datoApellido }) => {
 
@@ -14,13 +17,21 @@ const Form = ({  datoNombre, datoEmail, datoCel, datoApellido }) => {
             datoApellido(e.target.apellido.value)
             datoEmail(e.target.email.value)
             datoCel(e.target.cel.value)
+            
         } else {
             MySwal.fire({
-                title: 'El email debe coincidir en ambos campos',
+                title: 'El email no coicide',
                 icon: 'warning',
             })
         }
     }
+    const sendDatos = () => {
+        Toastify({
+            text: "Gracias por ingresar sus datos ya puede finalizar la compra",
+            duration: 3000
+            }).showToast();
+    }
+
     return (
         <div>
             <form onSubmit={enviarForm}>
@@ -37,14 +48,14 @@ const Form = ({  datoNombre, datoEmail, datoCel, datoApellido }) => {
                     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='email' required />
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="exampleInputEmail2" className="form-label">Email</label>
+                    <label htmlFor="exampleInputEmail2" className="form-label">Reingrese su Email</label>
                     <input type="email" className="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" name='email2' required />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="cel" className="form-label">Celular</label>
                     <input type="number" className="form-control" id="cel" name='cel' required />
                 </div>
-                <button type='submit' className='btn border-success'>Enviar datos</button>
+                <button type='submit' className='btn border-success' onClick={sendDatos}>Enviar datos</button>
             </form>
         </div>
     )

@@ -63,7 +63,7 @@ const [ setApellido] = useState()
                 stock: productSnap.data().stock - productoEnCarrito.quantity,
             });
         });
-        setLoading(false);
+        setLoading(true);
         alert(
             `Gracias por su compra! Se generó la orden generada con ID: ${docRef.id}`
         );
@@ -106,7 +106,7 @@ const [ setApellido] = useState()
                 rowsPerPageOptions={[10]}
                 rowHeight={150}
             />
-            <h4>Total: ${totalSuma}</h4>
+            <h4 className="total">Total: ${totalSuma}</h4>
             <Form  datoNombre={setNombre} datoEmail={setEmail} datoCel={setCel} datoApellido={setApellido} />
             <Button onClick={clearCart} color="error" variant="outlined">
                 Clear cart
