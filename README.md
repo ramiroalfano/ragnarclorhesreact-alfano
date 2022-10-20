@@ -12,3 +12,4 @@ Este es mi E-Commmerce de utilizando la Fakestoreapi
 - sweetalert
 - Toastify
 - react-icons
+- @mui/x-data-grid
