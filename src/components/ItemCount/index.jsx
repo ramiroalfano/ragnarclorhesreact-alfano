@@ -1,5 +1,7 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import './style.css';
+import Toastify from 'toastify-js';
+import "toastify-js/src/toastify.css"
 
 const ItemCount = ({stock, initial, onAdd}) => {
 
@@ -9,7 +11,10 @@ const ItemCount = ({stock, initial, onAdd}) => {
         if(count < stock) {
             setCount(count+1);
         } else {
-            alert("No hay stock disponible");
+            Toastify({
+                text: "No hay stock disponible",
+                duration: 3000
+                }).showToast();
         }
     }
 
@@ -23,20 +28,13 @@ const ItemCount = ({stock, initial, onAdd}) => {
         setCount(initial=1);
     }
 
-    useEffect(()=> {
-        console.log("ItemCount");
-    }, []);
-
-    useEffect(()=> {
-        console.log("Se actualizo el stock!")
-    }, [count]);
 
     return (
     <div className="contador">
         <button className="cuentamenos" onClick={handleDecrement}>-</button>
         <h2 className="stock">{count}</h2>
         <button className="cuentamas" onClick={handleAdd}>+</button>
-        <button className="carro" onClick={addCart}>Agregar al carrito</button>
+        <button className="carro" onClick={addCart}>Agregar al cart</button>
     </div>
     );
 };

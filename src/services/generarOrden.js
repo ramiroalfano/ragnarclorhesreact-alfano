@@ -1,15 +1,15 @@
-const ordenGenerada = (nombre, email, telefono, cart, total) => {
+const generarOrden = (nombre, email, telefono, apellido, carrito, total) => {
     return {
-        buyer: {
-            nombre: nombre,
-            email: email,
-            telefono: telefono,
-        },
-        items: cart
-        ,
-        total: total,
-        createdAt: new Date().toLocaleString()
+    buyer: {
+        nombre: nombre,
+        email: email,
+        telefono: telefono,
+        apellido: apellido
+    },
+    items: carrito,
+    total: total,
+    createdAt: new Date().toLocaleString()
     }
 }
 
-export default ordenGenerada;
+export default generarOrden

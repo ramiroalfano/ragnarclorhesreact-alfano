@@ -1,7 +1,9 @@
 import React from 'react'
 import {HiShoppingCart} from 'react-icons/hi';
+import './style.css'
 
-export const CartWidget = () => {
+const CartWidget = () => {
+
 return (
     <div  className='cartwidget'>
     <HiShoppingCart color='white' size={30}/>

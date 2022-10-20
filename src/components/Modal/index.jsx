@@ -1,68 +1,53 @@
-import React, {useEffect} from "react";
-import "./style.css";
+import React from 'react'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
-const Modal = ({ handleClose }) => {
+const Form = ({  datoNombre, datoEmail, datoCel, datoApellido }) => {
 
 
-    useEffect(() => {
-        const handleEsc = (event) => {
-            console.log(event);
+    const MySwal = withReactContent(Swal)
 
-            if (event.keyCode === 27) {
-                console.log("will close");
-                handleClose(false);
-            }
-
-            if (event.keyCode === 13) {
-                console.log("will send");
-                handleSubmit();
-            }
-
-        };
-
-        window.addEventListener("keydown", handleEsc);
-
-        return () => {
-            console.log("Se desmontara el componente");
-            window.removeEventListener("keydown", handleEsc);
-        };
-
-    }, [handleClose]);
-
-    const handleSubmit = (evento) => {
-        evento?.preventDefault();
-        console.log(evento);
-    };
-
-    const onClose = () => {
-        handleClose(false);
-    };
-
+    const enviarForm = (e) => {
+        e.preventDefault()
+        if (e.target.email.value === e.target.email2.value) {
+            datoNombre(e.target.nombre.value)
+            datoApellido(e.target.apellido.value)
+            datoEmail(e.target.email.value)
+            datoCel(e.target.cel.value)
+        } else {
+            MySwal.fire({
+                title: 'El email debe coincidir en ambos campos',
+                icon: 'warning',
+            })
+        }
+    }
     return (
-        <div className="background">
-            <form className="modal-container" onSubmit={handleSubmit}>
-                <h2 className="title">Título del modal</h2>
-                <p className="text">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Fuga obcaecati incidunt, blanditiis quia ea in delectus
-                    repudiandae? Nostrum at officiis voluptatem, sit pariatur
-                    iure expedita hic impedit quasi velit magnam?
-                </p>
-                <div className="buttons-container">
-                    <button
-                        className="rounded-button-cancel"
-                        type="button"
-                        onClick={onClose}
-                    >
-                        Close
-                    </button>
-                    <button className="rounded-button-send" type="submit">
-                        Send
-                    </button>
+        <div>
+            <form onSubmit={enviarForm}>
+                <div className="mb-3">
+                    <label htmlFor="nombre" className="form-label">Nombre</label>
+                    <input type="text" className="form-control" id="nombre" name='nombre' required />
                 </div>
+                <div className="mb-3">
+                    <label htmlFor="apellido" className="form-label">Apellido</label>
+                    <input type="text" className="form-control" id="apellido" name='apellido' required />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
+                    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='email' required />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="exampleInputEmail2" className="form-label">Email</label>
+                    <input type="email" className="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" name='email2' required />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="cel" className="form-label">Celular</label>
+                    <input type="number" className="form-control" id="cel" name='cel' required />
+                </div>
+                <button type='submit' className='btn border-success'>Enviar datos</button>
             </form>
         </div>
-    );
-};
+    )
+}
 
-export default Modal;
+export default Form

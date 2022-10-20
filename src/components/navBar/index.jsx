@@ -1,22 +1,9 @@
 import React from "react";
 import CartWidget from "../cartWidget";
 import "./style.css";
-import { useState } from "react";
-import { Button } from "@mui/material";
 import {Link} from 'react-router-dom';
-import AuthContainer from "../../container/AuthContainer";
 
 const NavBar = () => {
-    const [loginModal, setLoginModal] = useState(false);
-    const [signupModal, setSignupModal] = useState(false);
-
-    const handleLogin = () => {
-        setLoginModal(true);
-    };
-    
-    const handleSignup = ()=> {
-        setSignupModal(true);
-    }
 
     return (
     <nav className="navbar navbar-expand-sm bg-dark ">
@@ -38,36 +25,10 @@ const NavBar = () => {
                 <li className="nav-item">
                     <Link className="nav-link" to="/category/jewelery">Joyeria</Link>
                 </li>
-                <li className="buttons-container">
-                    <Button
-                        size="medium"
-                        variant="outlined"
-                        onClick={handleLogin}
-                    >
-                        Login
-                    </Button>
-                    <Button
-                        size="medium"
-                        variant="contained"
-                        onClick={handleSignup}
-                    >
-                        Signup
-                    </Button>
-                </li>
                 <li>
                 <CartWidget/>
                 </li>
             </ul>
-            {(loginModal || signupModal) && (
-                    <AuthContainer
-                        handleClose={() => {
-                            setLoginModal(false);
-                            setSignupModal(false);
-                        }}
-                        login={loginModal}
-                        signUp={signupModal}
-                    />
-                )}
         </div>
     </nav>
 );

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Shop } from "../../context/ShopProvider";
-import ordenGenerada from "../../services/generarOrden";
-
+import generarOrden from "../../services/generarOrden";
+import Form from '../../components/Modal'
 import { DataGrid } from "@mui/x-data-grid";
 import { Button, CircularProgress } from "@mui/material";
 import { collection, addDoc } from "firebase/firestore";
@@ -9,9 +9,15 @@ import { doc, updateDoc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase/config";
 
 const Cart = () => {
-    const { cart, removeItem, clearCart, total } = useContext(Shop);
+const { clearCart, total,} = useContext(Shop)
+const { cart, removeItem } = useContext(Shop);
+const totalSuma = total()
+const [ setEmail] = useState()
+const [ setCel] = useState()
+const [ setNombre] = useState()
+const [ setApellido] = useState()
 
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     const renderImage = (image) => {
         return (
@@ -39,13 +45,14 @@ const Cart = () => {
     const handleBuy = async () => {
         setLoading(true)
         const importeTotal = total();
-        const orden = ordenGenerada(
+        const orden = generarOrden(
             "Ramiro",
             "ramirocoder@gmail.com",
             11111111111,
             cart,
             importeTotal
         );
+        console.log(orden);
 
         const docRef = await addDoc(collection(db, "orders"), orden);
 
@@ -99,6 +106,8 @@ const Cart = () => {
                 rowsPerPageOptions={[10]}
                 rowHeight={150}
             />
+            <h4>Total: ${totalSuma}</h4>
+            <Form  datoNombre={setNombre} datoEmail={setEmail} datoCel={setCel} datoApellido={setApellido} />
             <Button onClick={clearCart} color="error" variant="outlined">
                 Clear cart
             </Button>
